@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Setup - The 37-Minute Launch System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        .announcement {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+        .header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .video-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        .checklist {
+            background: #f0f4ff;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .checklist h3 {
+            margin-bottom: 20px;
+            color: #5a67d8;
+        }
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .pricing-section {
+            background: #1a202c;
+            color: #fff;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .pricing-card {
+            background: #2d3748;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: scale(1.05);
+        }
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+        .pricing-card .period {
+            color: #a0aec0;
+            margin-bottom: 25px;
+        }
+        .pricing-card.featured .period {
+            color: rgba(255,255,255,0.8);
+        }
+        .pricing-card ul {
+            text-align: left;
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+        .pricing-card li {
+            margin-bottom: 12px;
+            color: #cbd5e0;
+        }
+        .pricing-card.featured li {
+            color: rgba(255,255,255,0.9);
+        }
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #48bb78;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-white {
+            background: #fff;
+            color: #667eea;
+        }
+        .faq {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 25px 0;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        .faq-item p {
+            color: #718096;
+        }
+        .guarantee {
+            background: #c6f6d5;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 8px;
+        }
+        .guarantee h3 {
+            color: #22543d;
+            margin-bottom: 15px;
+        }
+        .guarantee p {
+            color: #276749;
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement">
+        🚀 New: Platinum Service now includes weekly offer launches — Limited to 20 clients
+    </div>
+
+    <div class="header">
+        <h1>Launch Your Next Offer in 37 Minutes</h1>
+        <p>The AI-powered operating system that turns your ideas into live, revenue-generating assets while you focus on strategy.</p>
+    </div>
+
+    <div class="video-placeholder">
+        [Video: Watch the 37-minute launch process]
+    </div>
+
+    <div class="content">
+        <h2>From Idea to Live in One Session</h2>
+        <p>Most entrepreneurs have a notebook full of great ideas. The problem? Turning those ideas into reality takes weeks of coordination, writing, designing, and technical setup.</p>
+        <p>By the time you're ready to launch, the moment has passed. Or worse—someone else got there first.</p>
+        <p>OpenClaw changes the game. Here's what happens in 37 minutes:</p>
+
+        <div class="checklist">
+            <h3>The 37-Minute Breakdown</h3>
+            <ul>
+                <li>Market research and angle validation (5 min)</li>
+                <li>Sales copy and email sequence written (10 min)</li>
+                <li>Landing page built and styled (10 min)</li>
+                <li>Payment processing connected (5 min)</li>
+                <li>Automation workflows activated (5 min)</li>
+                <li>Traffic systems deployed (2 min)</li>
+            </ul>
+        </div>
+
+        <h2>Two Ways to Work With Us</h2>
+        <p>Whether you want to run the system yourself or have us operate it for you, we've got you covered.</p>
+    </div>
+
+    <div class="pricing-section">
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Self-Setup</h3>
+                <div class="price">$199</div>
+                <div class="period">per month</div>
+                <ul>
+                    <li>Complete OpenClaw installation</li>
+                    <li>Your own AI agent instance</li>
+                    <li>5 custom skills included</li>
+                    <li>Full tool integrations</li>
+                    <li>2-hour training session</li>
+                    <li>Monthly strategy call</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Platinum Service</h3>
+                <div class="price">$2,499</div>
+                <div class="period">one-time setup</div>
+                <ul>
+                    <li>Everything in Self-Setup</li>
+                    <li>Fully managed by our team</li>
+                    <li>Unlimited skill builds</li>
+                    <li>Weekly offer launches</li>
+                    <li>Same-day priority support</li>
+                    <li>Quarterly strategy sessions</li>
+                </ul>
+                <a href="#" class="btn btn-white">Claim Your Spot</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h4>Do I need technical skills?</h4>
+            <p>No. If you can use email, you can use OpenClaw. The interface is conversational—you describe what you want, and it happens.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What tools does it integrate with?</h4>
+            <p>Stripe, PayPal, all major email platforms, CRMs, payment processors, and 5,000+ other applications via API.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>How is this different from ChatGPT?</h4>
+            <p>ChatGPT gives you text. OpenClaw gives you finished, deployed assets connected to your business systems. It's the difference between getting advice and getting results.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What's the guarantee?</h4>
+            <p>7 days. If we don't launch your first offer in the first week, or if you're not satisfied for any reason, full refund.</p>
+        </div>
+    </div>
+
+    <div class="guarantee">
+        <h3>7-Day Money-Back Guarantee</h3>
+        <p>Try OpenClaw risk-free. If it doesn't save you at least 5 hours in your first month, we'll refund every penny.</p>
+    </div>
+</body>
+</html>
